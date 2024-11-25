@@ -1,0 +1,15 @@
+train: /content/drive/MyDrive/dl/udacity-car-dataset-1/train/images
+val: /content/drive/MyDrive/dl/udacity-car-dataset-1/valid/images
+test: /content/drive/MyDrive/dl/udacity-car-dataset-1/test/images
+
+nc: 11
+names: ['biker', 'car', 'pedestrian', 'trafficLight', 'trafficLight-Green', 'trafficLight-GreenLeft', 'trafficLight-Red', 'trafficLight-RedLeft', 'trafficLight-Yellow', 'trafficLight-YellowLeft', 'truck']
+
+
+roboflow:
+  license: CC BY 4.0
+  project: udacity-car-dataset-trbuh
+  url: https://universe.roboflow.com/ajaykumar-t9dpy/udacity-car-dataset-trbuh/dataset/1
+  version: 1
+  workspace: ajaykumar-t9dpy
+
