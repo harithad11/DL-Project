@@ -8,41 +8,49 @@
 
 ## I. Problem Statement and Significance
 
-This project addresses the challenge of real-time object detection and tracking in autonomous driving systems, particularly in urban environments like Palo Alto. Factors such as changing lighting conditions, object occlusion, and sudden appearances of objects complicate this task. Accurate detection of vehicles, pedestrians, and cyclists is crucial for safe driving decisions; failures in these systems can lead to accidents. By evaluating and refining deep learning models such as YOLO and Faster R-CNN, we aim to enhance the accuracy and reliability of autonomous systems in managing complex driving scenarios, ultimately improving overall safety.
+Autonomous vehicle systems require robust, accurate, and real-time object detection to ensure safe navigation and decision-making in dynamic environments. The selection of an appropriate object detection model significantly impacts the system's ability to balance accuracy, speed, and scalability. However, a comprehensive evaluation of contemporary models like YOLO v8 and Faster R-CNN for such real-world applications remains underexplored. This study aims to bridge the gap by assessing the performance of these models in the context of autonomous driving, focusing on key metrics such as detection accuracy, inference speed, and resource efficiency.
 
 ## II. Relevant Readings
 
-1. **"You Only Look Once: Unified, Real-Time Object Detection" (YOLO)**  
-   This paper introduces YOLO, an efficient real-time object detection model that has set benchmarks for fast object detection in various applications, including self-driving cars.
-
-2. **"Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks"**  
-   Faster R-CNN enhances earlier RCNN models by employing a region proposal network, significantly improving speed and accuracy in object detection.
-
-3. **"Deep Learning for Object Detection: A Comprehensive Review"**  
-   This review offers insights into various deep learning models, including YOLO and RCNN, their application in object detection, and the challenges faced in autonomous driving environments.
-
-4. **"An Overview of Object Detection: One-stage versus Two-stage Detectors"**  
-   This paper compares one-stage detectors like YOLO with two-stage detectors like RCNN, elucidating the trade-offs between speed and accuracy in object detection.
+1. "You Only Look Once: Unified, Real-Time Object Detection" (YOLO)
+This paper introduces YOLO, an efficient, real-time object detection model that has become a benchmark for fast object detection in many applications, including self-driving cars.
+[YOLO Paper](https://arxiv.org/abs/1506.02640)
+2. "Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks"
+Faster R-CNN improves over earlier RCNN models by using a region proposal network, making it faster and more accurate in detecting objects.
+[Faster R-CNN Paper](https://arxiv.org/abs/1506.01497)
+3. "Deep Learning for Object Detection: A Comprehensive Review"
+This review provides insights into various deep learning models, including YOLO and RCNN, and their use in object detection. It also explores key challenges in autonomous driving environments.
+[Deep Learning for Object Detection](https://arxiv.org/abs/1907.09408)
+4. "An Overview of Object Detection: One-stage versus Two-stage Detectors"
+This paper compares one-stage detectors like YOLO with two-stage detectors like RCNN, which is relevant for understanding the trade-offs between speed and accuracy in object detection.
+[Object Detection Overview](https://arxiv.org/abs/2004.02190)
 
 ## III. Data Sources
 
-- Udacity Self-Driving Car Dataset
-- KITTI Vision Benchmark Suite
-- Berkeley DeepDrive (BDD100K)
+1. Udacity Self-Driving Car Dataset
+https://github.com/udacity/self-driving-car/tree/master/annotations
+2. KITTI Vision Benchmark Suite
+http://www.cvlibs.net/datasets/kitti/
+3. Berkeley DeepDrive (BDD100K)
+https://www.bdd100k.com/
 
 ## IV. Methodology
 
-- **YOLOv5 for Object Detection**
-- **Transfer Learning**
-- **Faster R-CNN for Object Detection**
-- **Object Tracking with SORT/DeepSORT**
-- **Comparison with Other Models** (Fast R-CNN, Mask R-CNN)
+Data Pipeline:
+Dataset: Udacity Self Driving Car Dataset, BDD100K
+Data Preprocessing 
+Data Augmentation
+Data Loading
+Model Training
+Evaluation and Testing
+Post-Training Processing
+Data Storage
+
 
 ## V. Evaluation Strategy
 
-To evaluate the performance of our object detection and tracking models, we will utilize various metrics:
-- **Object Detection Accuracy:** Measured using mean Average Precision (mAP) at different IoU thresholds, along with precision and recall to assess true and false detections.
-- **Bounding Box Localization:** Evaluated through IoU scores and bounding box quality.
-- **Tracking Performance:** Assessed using MOTA (Multiple Object Tracking Accuracy) and IDF1 to gauge tracking consistency and accuracy across frames.
-- **Real-time Performance:** Measured in FPS (Frames Per Second) and latency, which are critical for rapid responses in autonomous driving.
-- **Qualitative Evaluation:** Conducted through visual inspection and error analysis to identify failure modes and edge cases, such as occlusions and lighting variations.
+To assess and compare the performance of YOLO v8 and Faster R-CNN for object detection in autonomous driving, we employ the following evaluation metrics:
+PR Curve
+F1 Curve
+Confusion Matrix
+These evaluations will follow the data pipeline stages: preprocessing, augmentation, and loading from datasets like Udacity and BDD100K. Results from model testing on unseen data will ensure robustness. Post-training processing will refine model outputs, while insights derived will guide optimization strategies for autonomous vehicle applications.
