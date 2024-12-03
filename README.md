@@ -35,6 +35,8 @@ http://www.cvlibs.net/datasets/kitti/
 https://www.bdd100k.com/
 
 ## IV. Methodology
+YOLO v8: Unified detection architecture optimized for speed with a single neural network for localization and classification. Known for speed and efficiency, making it suitable for real-time application
+Faster R-CNN: Region Proposal Network (RPN) generates proposals; separate layers handle classification and bounding boxes. Renowned for its accuracy, particularly in complex scenes, but requires more computational resources.
 
 Data Pipeline:
 Dataset: Udacity Self Driving Car Dataset, BDD100K
